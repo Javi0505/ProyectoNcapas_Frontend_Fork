@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Sin imagen">
+  <defs>
+    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="14" height="14" fill="#141416"/>
+      <rect width="7" height="14" fill="#1b1b1e"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="750" fill="url(#hatch)"/>
+  <rect x="0.5" y="0.5" width="599" height="749" fill="none" stroke="#2a2a2e"/>
+  <path d="M232 330h136v112H232z" fill="none" stroke="#3d3d43" stroke-width="4"/>
+  <path d="M232 410l40-40 34 34 30-30 32 32v36H232z" fill="#3d3d43"/>
+  <circle cx="268" cy="364" r="12" fill="#3d3d43"/>
+  <rect x="40" y="620" width="128" height="32" fill="#0a0a0a"/>
+  <text x="52" y="642" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#8a8a90" letter-spacing="1.5">SIN IMAGEN</text>
+</svg>
