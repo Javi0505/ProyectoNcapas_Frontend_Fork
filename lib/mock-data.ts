@@ -4,14 +4,15 @@ import type {
 
 export const BRANDS = [
   'LABWORKS', 'VAULT.STD', 'MONOCHROME', 'K-SELECT', 'ARCHIVE', 'UTILITY DIV.', 'SHADOW CO.',
+  'JORDAN', 'NIKE', 'NEW ERA',
 ]
 
 export const CATEGORIES: Category[] = [
-  { id: 'sneakers', name: 'Tenis', count: 48 },
-  { id: 'streetwear', name: 'Ropa urbana', count: 36 },
+  { id: 'sneakers', name: 'Tenis', count: 49 },
+  { id: 'streetwear', name: 'Ropa urbana', count: 37 },
   { id: 'hoodies', name: 'Sudaderas', count: 22 },
   { id: 'tees', name: 'Camisetas', count: 31 },
-  { id: 'caps', name: 'Gorras', count: 14 },
+  { id: 'caps', name: 'Gorras', count: 20 },
   { id: 'accessories', name: 'Accesorios', count: 19 },
 ]
 
@@ -211,6 +212,78 @@ const SEED: ProductSeed[] = [
     sizes: SIZES_APPAREL, colors: [{ name: 'Negro', hex: '#0a0a0a' }, { name: 'Oliva', hex: '#3c3d24' }],
     rating: 4.5, reviews: 18,
     desc: 'Nylon con recubrimiento DWR. Bastilla ajustable. Expansión cargo oculta.',
+  },
+  {
+    id: 'p17', sku: 'KL-AJ1L-OLV', name: 'Air Jordan 1 Low OG SP Travis Scott "Olive"', brand: 'JORDAN',
+    category: 'sneakers', price: 1450, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: ['LIMITADO', 'VERIFICADO'], featured: true, limited: true,
+    images: ['/images/products/aj1-low-travis.jpg', '/images/products/aj1-low-travis-alt.avif'],
+    sizes: SIZES_SNEAKER, colors: [{ name: 'Oliva', hex: '#4a4a2e' }, { name: 'Vela', hex: '#ece5d8' }],
+    rating: 4.9, reviews: 204,
+    desc: 'Cuero y gamuza en oliva con swoosh invertido cosido al revés. Bolsillo oculto en la lengüeta y suela de goma envejecida de fábrica.',
+  },
+  {
+    id: 'p18', sku: 'KL-FCB-CJ', name: 'Jersey FC Barcelona x Cactus Jack', brand: 'NIKE',
+    category: 'streetwear', price: 320, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: ['LIMITADO', 'VERIFICADO'], featured: true, limited: true,
+    images: ['/images/products/travis-x-barca.webp', '/images/products/travis-x-barca-2.webp'],
+    sizes: SIZES_APPAREL, colors: [{ name: 'Blaugrana', hex: '#a50044' }, { name: 'Azul', hex: '#004d98' }],
+    rating: 4.8, reviews: 96,
+    desc: 'Jersey de partido en poliéster reciclado con tecnología Dri-FIT. Escudo bordado y marca Cactus Jack en el frente.',
+  },
+  {
+    id: 'p19', sku: 'KL-NE-BULLS', name: 'Gorra Chicago Bulls 9FIFTY', brand: 'NEW ERA',
+    category: 'caps', price: 45, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: [],
+    images: ['/images/products/bulls-cap.webp'],
+    sizes: SIZES_CAP, colors: [{ name: 'Negro', hex: '#0a0a0a' }],
+    rating: 4.6, reviews: 87,
+    desc: 'Snapback de 6 paneles en poliéster estructurado. Visera plana y logo del equipo bordado en alto relieve.',
+  },
+  {
+    id: 'p20', sku: 'KL-NE-NYY', name: 'Gorra New York Yankees Corduroy 9FORTY', brand: 'NEW ERA',
+    category: 'caps', price: 55, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: ['NUEVO'], isNew: true,
+    images: ['/images/products/yankees-cap.webp'],
+    sizes: SIZES_CAP, colors: [{ name: 'Camel', hex: '#c9a882' }],
+    rating: 4.7, reviews: 54,
+    desc: 'Pana de canal fino sobre corona sin estructura. Visera curva y cierre trasero de correa metálica.',
+  },
+  {
+    id: 'p21', sku: 'KL-NE-LAL', name: 'Gorra Los Angeles Lakers 59FIFTY', brand: 'NEW ERA',
+    category: 'caps', price: 50, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: [],
+    images: ['/images/products/lakers-cap.webp'],
+    sizes: SIZES_CAP, colors: [{ name: 'Negro', hex: '#0a0a0a' }, { name: 'Morado', hex: '#552583' }],
+    rating: 4.5, reviews: 62,
+    desc: 'Corte cerrado en lana mezclada con corona estructurada. Sudadera interior de poliéster y visera plana.',
+  },
+  {
+    id: 'p22', sku: 'KL-NE-FCB', name: 'Gorra FC Barcelona 9FORTY', brand: 'NEW ERA',
+    category: 'caps', price: 42, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: [],
+    images: ['/images/products/barca-cap.webp'],
+    sizes: SIZES_CAP, colors: [{ name: 'Piedra', hex: '#ddd8cc' }, { name: 'Marino', hex: '#1b2340' }],
+    rating: 4.4, reviews: 38,
+    desc: 'Sarga de algodón sin estructura con visera precurvada. Escudo del club bordado y correa ajustable con hebilla.',
+  },
+  {
+    id: 'p23', sku: 'KL-NE-CFC', name: 'Gorra Chelsea FC 59FIFTY', brand: 'NEW ERA',
+    category: 'caps', price: 48, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: [],
+    images: ['/images/products/chelsea-cap.webp'],
+    sizes: SIZES_CAP, colors: [{ name: 'Azul Royal', hex: '#034694' }],
+    rating: 4.5, reviews: 41,
+    desc: 'Corona estructurada de 6 paneles en poliéster. Visera plana, ojales bordados y escudo del club en relieve.',
+  },
+  {
+    id: 'p24', sku: 'KL-NE-CFC-TR', name: 'Gorra Chelsea FC Trucker A-Frame', brand: 'NEW ERA',
+    category: 'caps', price: 40, condition: 'NEW', auth: 'AUTHENTICATED',
+    badges: ['POCO STOCK'],
+    images: ['/images/products/chelsea-cap-2.jpeg'],
+    sizes: SIZES_CAP, colors: [{ name: 'Negro', hex: '#0a0a0a' }],
+    rating: 4.3, reviews: 19,
+    desc: 'Frente A-Frame en sarga con paneles traseros de malla. Cierre snapback y parche del club aplicado al frente.',
   },
 ]
 

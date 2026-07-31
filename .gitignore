@@ -32,5 +32,7 @@ next-env.d.ts
 /.claude/
 /.agents/
 /skills-lock.json
+/docs/superpowers/
+/.superpowers/
 
 BD.png
