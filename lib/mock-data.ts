@@ -3,17 +3,13 @@ import type {
 } from './types'
 
 export const BRANDS = [
-  'LABWORKS', 'VAULT.STD', 'MONOCHROME', 'K-SELECT', 'ARCHIVE', 'UTILITY DIV.', 'SHADOW CO.',
   'JORDAN', 'NIKE', 'NEW ERA',
 ]
 
 export const CATEGORIES: Category[] = [
-  { id: 'sneakers', name: 'Tenis', count: 49 },
-  { id: 'streetwear', name: 'Ropa urbana', count: 37 },
-  { id: 'hoodies', name: 'Sudaderas', count: 22 },
-  { id: 'tees', name: 'Camisetas', count: 31 },
-  { id: 'caps', name: 'Gorras', count: 20 },
-  { id: 'accessories', name: 'Accesorios', count: 19 },
+  { id: 'sneakers', name: 'Tenis', count: 1 },
+  { id: 'streetwear', name: 'Ropa urbana', count: 1 },
+  { id: 'caps', name: 'Gorras', count: 6 },
 ]
 
 export const stripeImg = (label: string, h1: string, h2: string, accent?: string) => {
@@ -29,24 +25,6 @@ export const stripeImg = (label: string, h1: string, h2: string, accent?: string
     <text x='52' y='642' font-family='ui-monospace, Menlo, monospace' font-size='13' fill='${accent || '#ffffff'}' letter-spacing='1.5'>${label}</text>
   </svg>`
   return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg)
-}
-
-const PALETTES = [
-  ['#f4f1ea', '#e8e3d6'],
-  ['#ecece8', '#dcd9d2'],
-  ['#efe9df', '#dfd6c5'],
-  ['#e8eaed', '#d5d8dc'],
-  ['#f0e8e2', '#dfd1c4'],
-  ['#ebeae5', '#d4d2cb'],
-]
-
-const mkImages = (slug: string, n: number) => {
-  const arr: string[] = []
-  for (let i = 0; i < n; i++) {
-    const p = PALETTES[(slug.charCodeAt(0) + i) % PALETTES.length]
-    arr.push(stripeImg(`${slug}_0${i + 1}.tif`, p[0], p[1]))
-  }
-  return arr
 }
 
 const SIZES_SNEAKER = ['US 7', 'US 7.5', 'US 8', 'US 8.5', 'US 9', 'US 9.5', 'US 10', 'US 10.5', 'US 11', 'US 12']
@@ -69,150 +47,6 @@ type ProductSeed =
   & Partial<Pick<Product, 'featured' | 'isNew' | 'limited' | 'privateDrop'>>
 
 const SEED: ProductSeed[] = [
-  {
-    id: 'p01', sku: 'KL-SR01-BLK', name: 'Sombra Runner 01', brand: 'LABWORKS',
-    category: 'sneakers', price: 240, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['LIMITADO', 'VERIFICADO'], featured: true, isNew: true, limited: true,
-    images: mkImages('SR01', 4),
-    sizes: SIZES_SNEAKER, colors: [{ name: 'Ónix', hex: '#0c0c0e' }, { name: 'Hueso', hex: '#e8e3d6' }],
-    rating: 4.8, reviews: 142,
-    desc: 'Runner de perfil bajo con upper de malla técnica, herrajes en negro total y entresuela de phylon vulcanizada. Hecho para la rotación diaria.',
-  },
-  {
-    id: 'p02', sku: 'KL-AL02-CRM', name: 'Archivo Baja Crema', brand: 'ARCHIVE',
-    category: 'sneakers', price: 320, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['VERIFICADO'], featured: true,
-    images: mkImages('AL02', 4),
-    sizes: SIZES_SNEAKER, colors: [{ name: 'Crema', hex: '#e9dfc8' }, { name: 'Arena', hex: '#c9b896' }],
-    rating: 4.7, reviews: 89,
-    desc: 'Reedición del programa de archivo. Cuero martillado, entresuela de espuma cruda y bordes terminados a mano.',
-  },
-  {
-    id: 'p03', sku: 'KL-VH03-BLK', name: 'Bóveda Alta Negra', brand: 'VAULT.STD',
-    category: 'sneakers', price: 410, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['LIMITADO', 'DROP PRIVADO', 'VERIFICADO'], privateDrop: true, limited: true,
-    images: mkImages('VH03', 4),
-    sizes: SIZES_SNEAKER, colors: [{ name: 'Negro', hex: '#0a0a0a' }],
-    rating: 4.9, reviews: 47,
-    desc: 'Lanzamiento solo para la bóveda. Cuero plena flor, contrafuerte tejido y cuello de tobillo extendido. Solo miembros.',
-  },
-  {
-    id: 'p04', sku: 'KL-LR04-VLT', name: 'Lab Runner Volt', brand: 'LABWORKS',
-    category: 'sneakers', price: 220, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['NUEVO'], isNew: true,
-    images: mkImages('LR04', 3),
-    sizes: SIZES_SNEAKER, colors: [{ name: 'Volt', hex: '#cfd62f' }, { name: 'Humo', hex: '#3a3a3e' }],
-    rating: 4.5, reviews: 23,
-    desc: 'Suela volt firma de K Lab. Tejido ingenieril. Jaula de talón en laminado de carbono.',
-  },
-  {
-    id: 'p05', sku: 'KL-MC05-BLK', name: 'Pantalón Cargo Monocromo', brand: 'MONOCHROME',
-    category: 'streetwear', price: 180, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['NUEVO'], isNew: true,
-    images: mkImages('MC05', 3),
-    sizes: SIZES_APPAREL, colors: [{ name: 'Negro', hex: '#0a0a0a' }, { name: 'Piedra', hex: '#7a766c' }],
-    rating: 4.6, reviews: 64,
-    desc: 'Ripstop de algodón de peso medio. Rodillas articuladas. Bolsillos utilitarios con cierre oculto.',
-  },
-  {
-    id: 'p06', sku: 'KL-ET06-WHT', name: 'Camiseta Oversize Esencial', brand: 'K-SELECT',
-    category: 'tees', price: 60, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: [],
-    images: mkImages('ET06', 2),
-    sizes: SIZES_APPAREL, colors: [{ name: 'Hueso', hex: '#e8e3d6' }, { name: 'Negro', hex: '#0a0a0a' }, { name: 'Humo', hex: '#3a3a3e' }],
-    rating: 4.4, reviews: 318,
-    desc: 'Algodón peinado de 240gsm. Corte holgado. Hombro caído. Estampado de pecho K LAB prensado a mano.',
-  },
-  {
-    id: 'p07', sku: 'KL-CH07-WSH', name: 'Sudadera Lavada Coleccionista', brand: 'ARCHIVE',
-    category: 'hoodies', price: 220, condition: 'USED', auth: 'AUTHENTICATED',
-    badges: ['SEMINUEVO', 'VERIFICADO'],
-    images: mkImages('CH07', 3),
-    sizes: SIZES_APPAREL, colors: [{ name: 'Negro lavado', hex: '#1d1c1a' }],
-    rating: 4.8, reviews: 12,
-    desc: 'Lavado vintage. Fleece pesado de 14oz. Inspeccionada y reacondicionada por nuestro Laboratorio de Autenticación.',
-  },
-  {
-    id: 'p08', sku: 'KL-PD08-CAP', name: 'Gorra Drop Privado', brand: 'K-SELECT',
-    category: 'caps', price: 80, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['DROP PRIVADO', 'LIMITADO'], privateDrop: true, limited: true,
-    images: mkImages('PD08', 2),
-    sizes: SIZES_CAP, colors: [{ name: 'Negro', hex: '#0a0a0a' }, { name: 'Rojo', hex: '#d92626' }],
-    rating: 4.7, reviews: 31,
-    desc: 'Modelo de 6 paneles solo para miembros. Sarga cepillada, correa de cuero y etiqueta de laboratorio en relieve.',
-  },
-  {
-    id: 'p09', sku: 'KL-UC09-BAG', name: 'Bolso Cruzado Utility', brand: 'UTILITY DIV.',
-    category: 'accessories', price: 140, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['POCO STOCK'],
-    images: mkImages('UC09', 3),
-    sizes: SIZES_CAP, colors: [{ name: 'Negro', hex: '#0a0a0a' }],
-    rating: 4.3, reviews: 27,
-    desc: 'Carcasa de nylon balístico. Compartimento principal con doble cierre. Banda reflectiva de laboratorio en la correa.',
-  },
-  {
-    id: 'p10', sku: 'KL-HT10-HV', name: 'Camiseta Pesada K Lab', brand: 'K-SELECT',
-    category: 'tees', price: 75, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['NUEVO'], isNew: true,
-    images: mkImages('HT10', 2),
-    sizes: SIZES_APPAREL, colors: [{ name: 'Hueso', hex: '#e8e3d6' }, { name: 'Negro', hex: '#0a0a0a' }],
-    rating: 4.5, reviews: 88,
-    desc: 'Peso pesado de 320gsm. Teñida en prenda. Etiqueta interior codificada del laboratorio.',
-  },
-  {
-    id: 'p11', sku: 'KL-DJ11-IND', name: 'Chaqueta Denim Archivo', brand: 'ARCHIVE',
-    category: 'streetwear', price: 280, condition: 'USED', auth: 'AUTHENTICATED',
-    badges: ['SEMINUEVO', 'VERIFICADO'],
-    images: mkImages('DJ11', 3),
-    sizes: SIZES_APPAREL, colors: [{ name: 'Índigo', hex: '#1f2a3a' }],
-    rating: 4.6, reviews: 9,
-    desc: 'Trucker en denim selvedge. Pátina honesta. Pieza autenticada por el laboratorio, condición calificada 8.4/10.',
-  },
-  {
-    id: 'p12', sku: 'KL-CC12-CRM', name: 'Court Crema Baja', brand: 'LABWORKS',
-    category: 'sneakers', price: 195, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: [],
-    images: mkImages('CC12', 3),
-    sizes: SIZES_SNEAKER, colors: [{ name: 'Crema', hex: '#e9dfc8' }, { name: 'Goma', hex: '#9b6a3e' }],
-    rating: 4.4, reviews: 51,
-    desc: 'Silueta court en cuero martillado. Suela de goma. Detalle de gamuza lateral.',
-  },
-  {
-    id: 'p13', sku: 'KL-SR13-PRO', name: 'Humo Runner Pro', brand: 'SHADOW CO.',
-    category: 'sneakers', price: 260, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: ['POCO STOCK', 'VERIFICADO'],
-    images: mkImages('SR13', 4),
-    sizes: SIZES_SNEAKER, colors: [{ name: 'Humo', hex: '#3a3a3e' }, { name: 'Hueso', hex: '#e8e3d6' }],
-    rating: 4.7, reviews: 73,
-    desc: 'Entrenador de rendimiento. Clip de talón en TPU. Logo reflectivo en la lengüeta.',
-  },
-  {
-    id: 'p14', sku: 'KL-LC14-CAP', name: 'Gorra Logo Lab', brand: 'K-SELECT',
-    category: 'caps', price: 55, condition: 'NEW', auth: 'AUTHENTICATED',
-    badges: [],
-    images: mkImages('LC14', 2),
-    sizes: SIZES_CAP, colors: [{ name: 'Negro', hex: '#0a0a0a' }, { name: 'Piedra', hex: '#7a766c' }, { name: 'Crema', hex: '#e9dfc8' }],
-    rating: 4.2, reviews: 119,
-    desc: 'Gorra de 6 paneles sin estructura. Visera curva. Bordado en cadena K LAB.',
-  },
-  {
-    id: 'p15', sku: 'KL-WH15-BLK', name: 'Sudadera Negra Lavada', brand: 'MONOCHROME',
-    category: 'hoodies', price: 170, condition: 'NEW', auth: 'NOT_SUBMITTED',
-    badges: [],
-    images: mkImages('WH15', 2),
-    sizes: SIZES_APPAREL, colors: [{ name: 'Negro lavado', hex: '#1d1c1a' }],
-    rating: 4.6, reviews: 42,
-    desc: 'Pullover pesado teñido por pigmento. Corte holgado. Costuras tonales.',
-  },
-  {
-    id: 'p16', sku: 'KL-TN16-NYL', name: 'Pantalón Nylon Técnico', brand: 'UTILITY DIV.',
-    category: 'streetwear', price: 210, condition: 'NEW', auth: 'NOT_SUBMITTED',
-    badges: ['NUEVO'], isNew: true,
-    images: mkImages('TN16', 3),
-    sizes: SIZES_APPAREL, colors: [{ name: 'Negro', hex: '#0a0a0a' }, { name: 'Oliva', hex: '#3c3d24' }],
-    rating: 4.5, reviews: 18,
-    desc: 'Nylon con recubrimiento DWR. Bastilla ajustable. Expansión cargo oculta.',
-  },
   {
     id: 'p17', sku: 'KL-AJ1L-OLV', name: 'Air Jordan 1 Low OG SP Travis Scott "Olive"', brand: 'JORDAN',
     category: 'sneakers', price: 1450, condition: 'NEW', auth: 'AUTHENTICATED',
@@ -351,8 +185,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: 'review-3',
-    productId: 'p01',
-    productName: 'Sombra Runner 01',
+    productId: 'p17',
+    productName: 'Air Jordan 1 Low OG SP Travis Scott "Olive"',
     userId: 'mock-user-3',
     userFirstName: 'DANI',
     userLastName: 'L.',
