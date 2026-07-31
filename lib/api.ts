@@ -27,6 +27,7 @@ import {
   SHIPPING,
   ORDERS,
   REVIEWS,
+  DROPS,
 } from './mock-data'
 
 import { formatDateSV } from './datetime'
@@ -520,6 +521,8 @@ export async function deleteProduct(id: string, token: string): Promise<void> {
 }
 
 export async function getReviewsByProduct(productId: string): Promise<Review[]> {
+  if (USE_MOCK) return REVIEWS.filter((r) => r.productId === productId)
+
   const res = await apiGet<ApiResponse<Review[]>>(`/reviews/product/${productId}`)
   return res.data
 }
@@ -700,6 +703,7 @@ export async function getShippingMethods(): Promise<ShippingMethod[]> {
 }
 
 export async function getDrops(): Promise<Drop[]> {
+  if (USE_MOCK) return DROPS
 
   const response = await apiGet<ApiResponse<BackendDrop[]>>('/drops/')
 

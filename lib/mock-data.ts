@@ -327,8 +327,8 @@ export const ORDERS: Order[] = [
 export const REVIEWS: Review[] = [
   {
     id: 'review-1',
-    productId: 'mock-product-1',
-    productName: 'Producto verificado',
+    productId: 'p17',
+    productName: 'Air Jordan 1 Low OG SP Travis Scott "Olive"',
     userId: 'mock-user-1',
     userFirstName: 'MARCO',
     userLastName: 'V.',
@@ -339,8 +339,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: 'review-2',
-    productId: 'mock-product-1',
-    productName: 'Producto verificado',
+    productId: 'p17',
+    productName: 'Air Jordan 1 Low OG SP Travis Scott "Olive"',
     userId: 'mock-user-2',
     userFirstName: 'K.',
     userLastName: 'R.',
@@ -351,8 +351,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: 'review-3',
-    productId: 'mock-product-1',
-    productName: 'Producto verificado',
+    productId: 'p01',
+    productName: 'Sombra Runner 01',
     userId: 'mock-user-3',
     userFirstName: 'DANI',
     userLastName: 'L.',
@@ -360,5 +360,28 @@ export const REVIEWS: Review[] = [
     body: 'Gran par. El color salió un poco más oscuro de lo que esperaba en las fotos, pero me encantan.',
     isVerifiedPurchase: true,
     createdAt: '2026-04-28T12:00:00Z',
+  },
+]
+
+export const DROPS: Drop[] = [
+  {
+    id: 'd01', title: 'Barça x Cactus Jack', date: '14 AGO · 18:00', rawDate: '2026-08-14T18:00:00',
+    units: 120, type: 'PÚBLICO', img: '/hero/barca-cactus.png',
+  },
+  {
+    id: 'd02', title: 'Air Jordan 1 Low OG SP Travis Scott', date: '28 AGO · 20:00', rawDate: '2026-08-28T20:00:00',
+    units: 40, type: 'DROP PRIVADO', img: '/images/products/aj1-low-travis.jpg',
+  },
+  {
+    id: 'd03', title: 'New Era Club Series', date: '5 SEP · 17:30', rawDate: '2026-09-05T17:30:00',
+    units: 200, type: 'PÚBLICO', img: '/hero/gorras.png',
+  },
+  {
+    id: 'd04', title: 'Yankees Corduroy Capsule', date: '10 JUL · 19:00', rawDate: '2026-07-10T19:00:00',
+    units: 75, type: 'PÚBLICO', img: '/images/products/yankees-cap.webp',
+  },
+  {
+    id: 'd05', title: 'Chelsea FC Vault', date: '21 JUN · 21:00', rawDate: '2026-06-21T21:00:00',
+    units: 30, type: 'DROP PRIVADO', img: '/images/products/chelsea-cap.webp',
   },
 ]
